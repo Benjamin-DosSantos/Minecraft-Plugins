@@ -1,0 +1,59 @@
+package MainCommands;
+
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.PlayerInventory;
+import org.bukkit.inventory.meta.ItemMeta;
+
+import fanciful.FancyMessage;
+
+public class Item extends Command{
+
+	public Item(String name) {
+		super(name);
+	}
+
+	@Override
+	public boolean execute(CommandSender sender, String label, String[] args) {
+		Player player = (Player)sender;
+		
+		PlayerInventory playerInventory = player.getInventory();
+		ItemStack mainHandItem = playerInventory.getItemInMainHand();
+		ItemMeta mainItemMeta = mainHandItem.getItemMeta();
+		String itemName;
+		
+		if(mainItemMeta.hasDisplayName()){
+			itemName = mainItemMeta.getDisplayName();
+		}else{
+			itemName = mainHandItem.getType().name();
+		}
+		
+		String keyWord = "#item";
+		String moneySymbol = "$";
+		String totalMessage = "<" + player.getName() + "> ";
+		ChatColor itemColor = ChatColor.BLUE;
+		ChatColor priceColor = ChatColor.GREEN;
+		ChatColor mainColor = ChatColor.WHITE;
+		
+		FancyMessage message = new FancyMessage("");
+		
+		for(String arg: args){
+			if(arg.equalsIgnoreCase(keyWord)){
+				
+			}else if(arg.startsWith(moneySymbol)){
+				totalMessage += priceColor + arg;
+			}else{
+				totalMessage += arg;
+			}
+			totalMessage += mainColor + " ";
+		}
+		
+		Bukkit.broadcastMessage(totalMessage);
+		
+		return true;
+	}
+}// End of class

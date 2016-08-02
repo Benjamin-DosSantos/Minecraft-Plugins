@@ -1,0 +1,159 @@
+package MainCommands;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandSender;
+import org.bukkit.enchantments.Enchantment;
+import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.PlayerInventory;
+import org.bukkit.inventory.meta.ItemMeta;
+
+import fanciful.FancyMessage;
+
+public class Item extends Command{
+
+	public Item(String name) {
+		super(name);
+	}
+
+	@Override
+	public boolean execute(CommandSender sender, String label, String[] args) {
+		Player player = (Player)sender;
+		
+		PlayerInventory playerInventory = player.getInventory();
+		ItemStack mainHandItem = playerInventory.getItemInMainHand();
+		ItemMeta mainItemMeta = mainHandItem.getItemMeta();
+		String itemName;
+		
+		if(mainItemMeta.hasDisplayName()){
+			itemName = mainItemMeta.getDisplayName();
+		}else{
+			itemName = mainHandItem.getType().name();
+		}
+		
+		String keyWord = "#item";
+		String moneySymbol = "$";
+		ChatColor itemColor = ChatColor.BLUE;
+		ChatColor priceColor = ChatColor.GREEN;
+		ChatColor mainColor = ChatColor.WHITE;
+		
+		FancyMessage message = new FancyMessage("<" + player.getName() + "> ").color(mainColor);
+		
+		Map<Enchantment, Integer> enchant = mainHandItem.getEnchantments();
+
+		
+		for(String arg: args){
+			if(arg.equalsIgnoreCase(keyWord)){
+				message.then(itemName + " ").color(itemColor);
+				String totalToolTip = "";
+				int timesArround = 0;
+				for(Map.Entry<Enchantment, Integer> enchantSingle: enchant.entrySet()){
+					if(timesArround != 0){ totalToolTip += "\n"; }
+					totalToolTip += realName(enchantSingle.getKey().getName().toString()) + " " + enchantSingle.getValue().toString();
+					 timesArround++;
+				}
+				message.tooltip(totalToolTip);
+			}else if(arg.startsWith(moneySymbol)){
+				message.then(arg + " ")
+					.color(priceColor);
+			}else{
+				message.then(arg + " ");
+			}
+			message.toJSONString();
+		}
+		
+		message.send(Bukkit.getOnlinePlayers());
+		
+		return true;
+	}
+	
+	public static String realName(String currentName){
+		switch (currentName){
+			case "PROTECTION_ENVIRONMENTAL":
+				return "Protection";
+				
+			case "PROTECTION_FIRE":
+				return "Fire Protection";
+				 
+			case "PROTECTION_FALL":
+				return "Feather Falling";
+				 
+			case "PROTECTION_EXPLOSIONS":
+				return "Blast Protection";
+				 
+			case "PROTECTION_PROJECTILE":
+				return "Projectile Protection";
+				 
+			case "OXYGEN":
+				return "Respiration";
+				 
+			case "WATER_WORKER":
+				return "Aqua Affinity";
+				 
+			case "THORNS":
+				return "Thorns";
+				 
+			case "DEPTH_STRIDER":
+				return "Depth Strider";
+				 
+			case "FROST_WALKER":
+				return "Frost Walker";
+				 
+			case "DAMAGE_ALL":
+				return "";
+				 
+			case "DAMAGE_UNDEAD":
+				return "";
+				 
+			case "DAMAGE_ARTHROPODS":
+				return "";
+				 
+			case "KNOCKBACK":
+				return "";
+				 
+			case "FIRE_ASPECT":
+				return "";
+				 
+			case "LOOT_BONUS_MOBS":
+				return "";
+				 
+			case "DIG_SPEED":
+				return "";
+				 
+			case "SILK_TOUCH":
+				return "";
+				 
+			case "DURABILITY":
+				return "";
+				 
+			case "LOOT_BONUS_BLOCKS":
+				return "";
+				 
+			case "ARROW_DAMAGE":
+				return "";
+				 
+			case "ARROW_KNOCKBACK":
+				return "";
+				 
+			case "ARROW_FIRE":
+				return "";
+				 
+			case "ARROW_INFINITE":
+				return "";
+				 
+			case "LUCK":
+				return "";
+				 
+			case "LURE":
+				return "";
+
+			case "MENDING":
+				return "";
+		}
+	}
+}// End of class
