@@ -1,0 +1,11 @@
+name: ItemInfo
+version: 1.0.0
+main: ItemInfo.ItemInfo
+commands:
+  itel:
+    description: ItemInfo by MagaBenG
+    usage: /item
+    permission: ItemInfo.item
+    permission-message: No Permission!
+
+   
