@@ -1,0 +1,10 @@
+package MainCommands;
+
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandSender;
+
+public class CommandHandler {
+	public static boolean checkForCommand(CommandSender sender, Command cmd, String label, String[] args){
+		cmd.execute(sender, label, args);
+	}// End of checkForCommand method
+}// End of class

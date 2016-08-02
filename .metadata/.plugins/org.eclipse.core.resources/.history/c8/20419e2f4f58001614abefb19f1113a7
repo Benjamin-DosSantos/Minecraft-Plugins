@@ -1,0 +1,13 @@
+package MainCommands;
+
+public class CommandHandler {
+	public static void bufferCommands(){
+		// Load all of the commands up into a list 
+	}// End of bufferCommands method
+	
+	public static checkForCommand(){
+		// take in the command from the user
+		// check if the command is valid
+		// run the class associated with that command
+	}// End of checkForCommand method
+}// End of class

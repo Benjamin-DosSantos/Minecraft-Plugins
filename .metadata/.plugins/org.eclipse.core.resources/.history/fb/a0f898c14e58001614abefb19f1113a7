@@ -1,0 +1,7 @@
+package MainCommands;
+
+public class CommandHandler {
+	public CommandHandler(){
+		
+	}
+}// End of class

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="org.bukkit.ChatColor"/>
+<fullyQualifiedTypeName name="MainCommands.CommandHandler"/>
+<fullyQualifiedTypeName name="org.bukkit.command.Command"/>
+<fullyQualifiedTypeName name="MainCommands.Hello"/>
+</qualifiedTypeNameHistroy>

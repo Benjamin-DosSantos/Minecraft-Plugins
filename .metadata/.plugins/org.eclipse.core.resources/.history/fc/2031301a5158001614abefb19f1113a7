@@ -1,0 +1,21 @@
+package Utilities;
+
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandSender;
+import org.bukkit.plugin.java.JavaPlugin;
+
+import MainCommands.CommandHandler;
+
+public class Utilities extends JavaPlugin{
+	public void onEnable(){
+		
+	}// End of onEnable Method
+	
+	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args){
+		return cmd.execute(sender, label, args);
+	}// End of onCommand Method
+	
+	public void onDisable(){
+		
+	}// End of onDisable Method
+}// End of class

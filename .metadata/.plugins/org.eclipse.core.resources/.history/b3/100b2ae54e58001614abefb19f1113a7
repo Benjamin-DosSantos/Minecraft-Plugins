@@ -1,0 +1,7 @@
+package MainCommands;
+
+public class CommandHandler {
+	public static void bufferCommands(){
+		
+	}
+}// End of class

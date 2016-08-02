@@ -1,0 +1,11 @@
+name: Utilities
+version: 1.0.0
+main: Utilities.Utilities
+commands:
+  util:
+    description: Utilities by MagaBenG
+    usage: /util
+    permission: Utilities.main
+    permission-message: No Permission!
+
+   
