@@ -2,12 +2,15 @@ package ItemInfo;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
+import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import MainCommands.Item;
 
 public class ItemInfo extends JavaPlugin{
 	Item item = new Item(null);
+	
+	String identifier = "#item";
 	
 	public void onEnable(){
 		

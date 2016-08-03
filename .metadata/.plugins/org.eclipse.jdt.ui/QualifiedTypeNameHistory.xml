@@ -1,7 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="org.bukkit.ChatColor"/>
 <fullyQualifiedTypeName name="MainCommands.CommandHandler"/>
 <fullyQualifiedTypeName name="org.bukkit.command.Command"/>
 <fullyQualifiedTypeName name="MainCommands.Hello"/>
+<fullyQualifiedTypeName name="org.bukkit.entity.Player"/>
+<fullyQualifiedTypeName name="org.bukkit.Bukkit"/>
+<fullyQualifiedTypeName name="org.bukkit.ChatColor"/>
+<fullyQualifiedTypeName name="net.minecraft.server.v1_10_R1.Packet"/>
+<fullyQualifiedTypeName name="org.bukkit.craftbukkit.v1_10_R1.entity.CraftPlayer"/>
+<fullyQualifiedTypeName name="net.minecraft.server.v1_10_R1.PacketPlayOutChat"/>
+<fullyQualifiedTypeName name="net.minecraft.server.v1_10_R1.IChatBaseComponent.ChatSerializer"/>
+<fullyQualifiedTypeName name="mkremins.fanciful.TextualComponent"/>
+<fullyQualifiedTypeName name="java.awt.List"/>
+<fullyQualifiedTypeName name="java.util.Arrays"/>
+<fullyQualifiedTypeName name="com.google.gson.stream.JsonWriter"/>
+<fullyQualifiedTypeName name="com.google.gson.JsonElement"/>
+<fullyQualifiedTypeName name="com.avaje.ebean.text.json.JsonWriter"/>
+<fullyQualifiedTypeName name="com.avaje.ebean.text.json.JsonElement"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.util.logging.Level"/>
+<fullyQualifiedTypeName name="it.unimi.dsi.fastutil.Arrays"/>
+<fullyQualifiedTypeName name="org.bukkit.enchantments.Enchantment"/>
+<fullyQualifiedTypeName name="java.util.Map.Entry"/>
+<fullyQualifiedTypeName name="org.bukkit.inventory.meta.ItemMeta"/>
 </qualifiedTypeNameHistroy>
