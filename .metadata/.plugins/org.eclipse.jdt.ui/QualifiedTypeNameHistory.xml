@@ -5,7 +5,6 @@
 <fullyQualifiedTypeName name="MainCommands.Hello"/>
 <fullyQualifiedTypeName name="org.bukkit.entity.Player"/>
 <fullyQualifiedTypeName name="org.bukkit.Bukkit"/>
-<fullyQualifiedTypeName name="org.bukkit.ChatColor"/>
 <fullyQualifiedTypeName name="net.minecraft.server.v1_10_R1.Packet"/>
 <fullyQualifiedTypeName name="org.bukkit.craftbukkit.v1_10_R1.entity.CraftPlayer"/>
 <fullyQualifiedTypeName name="net.minecraft.server.v1_10_R1.PacketPlayOutChat"/>
@@ -17,10 +16,13 @@
 <fullyQualifiedTypeName name="com.google.gson.JsonElement"/>
 <fullyQualifiedTypeName name="com.avaje.ebean.text.json.JsonWriter"/>
 <fullyQualifiedTypeName name="com.avaje.ebean.text.json.JsonElement"/>
-<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="java.util.logging.Level"/>
 <fullyQualifiedTypeName name="it.unimi.dsi.fastutil.Arrays"/>
 <fullyQualifiedTypeName name="org.bukkit.enchantments.Enchantment"/>
 <fullyQualifiedTypeName name="java.util.Map.Entry"/>
 <fullyQualifiedTypeName name="org.bukkit.inventory.meta.ItemMeta"/>
+<fullyQualifiedTypeName name="org.bukkit.event.player.AsyncPlayerChatEvent"/>
+<fullyQualifiedTypeName name="net.minecraft.server.v1_10_R1.NBTTagList"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="org.bukkit.ChatColor"/>
 </qualifiedTypeNameHistroy>

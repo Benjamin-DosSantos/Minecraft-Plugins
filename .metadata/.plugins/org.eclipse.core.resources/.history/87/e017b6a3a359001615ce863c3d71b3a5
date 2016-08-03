@@ -5,5 +5,7 @@ commands:
   item:
     description: ItemInfo by MagaBenG
     usage: /item
+    permission: ItemInfo.item
+    permission-message: No Permission!
 
    

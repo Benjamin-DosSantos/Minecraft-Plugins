@@ -42,7 +42,7 @@ public class Item extends Command{
 		ChatColor infoColor = ChatColor.GRAY;
 		ChatColor italic = ChatColor.ITALIC;
 		
-		FancyMessage message = new FancyMessage("<" + player.getName() + "> ").color(mainColor);
+		FancyMessage message = new FancyMessage(player.getName() + ": ");
 		
 		Map<Enchantment, Integer> enchant = mainHandItem.getEnchantments();
 

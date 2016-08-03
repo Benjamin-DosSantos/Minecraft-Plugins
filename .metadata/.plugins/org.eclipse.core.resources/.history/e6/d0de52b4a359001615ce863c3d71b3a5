@@ -1,6 +1,6 @@
 package MainCommands;
 
-import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.bukkit.Bukkit;
@@ -37,10 +37,10 @@ public class Item extends Command{
 		}
 		
 		String keyWord = "#item";
-		String moneySymbol = "$";
-		ChatColor itemColor = ChatColor.BLUE;
-		ChatColor priceColor = ChatColor.GREEN;
+		ChatColor itemColor = ChatColor.AQUA;
 		ChatColor mainColor = ChatColor.WHITE;
+		ChatColor infoColor = ChatColor.GRAY;
+		ChatColor italic = ChatColor.ITALIC;
 		
 		FancyMessage message = new FancyMessage("<" + player.getName() + "> ").color(mainColor);
 		
@@ -49,25 +49,27 @@ public class Item extends Command{
 		
 		for(String arg: args){
 			if(arg.equalsIgnoreCase(keyWord)){
-				message.then(itemName + " ").color(itemColor);
-				String totalToolTip = "";
+				message.then("[").color(mainColor);
+				message.then(itemName).color(itemColor);
+				String totalToolTip = itemColor + "" + italic + itemName + "\n";
 				int timesArround = 0;
-				
-				for(String line: mainItemMeta.getLore()){
-					totalToolTip += line;
-				}
 				
 				for(Map.Entry<Enchantment, Integer> enchantSingle: enchant.entrySet()){
 					if(timesArround != 0){ totalToolTip += "\n"; }
-					totalToolTip += realName(enchantSingle.getKey().getName().toString()) + " " + enchantSingle.getValue().toString();
+					totalToolTip += infoColor + realName(enchantSingle.getKey().getName().toString()) + " " + romans(enchantSingle.getValue());
 					 timesArround++;
 				}
 				
+				if(mainItemMeta.hasLore()){
+					List<String> lore = mainItemMeta.getLore();
+					for(int i = 0; i < lore.size(); i++){
+						totalToolTip += "\n";
+						totalToolTip += lore.get(i);
+					}
+				}
 				
 				message.tooltip(totalToolTip);
-			}else if(arg.startsWith(moneySymbol)){
-				message.then(arg + " ")
-					.color(priceColor);
+				message.then("] ").color(mainColor);
 			}else{
 				message.then(arg + " ");
 			}
@@ -79,6 +81,21 @@ public class Item extends Command{
 		return true;
 	}
 	
+	private String romans(Integer value) {
+		switch (value){
+			default:
+				return "I";
+			case 2:
+				return "II";
+			case 3:
+				return "III";
+			case 4:
+				return "IV";
+			case 5:
+				return "V";
+		}
+	}
+
 	public static String realName(String currentName){
 		switch (currentName){
 			case "PROTECTION_ENVIRONMENTAL":
