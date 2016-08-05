@@ -1,0 +1,9 @@
+name: Feather
+version: 1.0.0
+main: main.feather
+commands:
+  gui:
+    description: ItemInfo by MagaBenG
+    usage: /gui
+
+   

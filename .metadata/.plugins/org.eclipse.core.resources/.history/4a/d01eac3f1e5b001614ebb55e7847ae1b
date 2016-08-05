@@ -1,0 +1,9 @@
+name: ItemInfo
+version: 1.0.0
+main: ItemInfo.ItemInfo
+commands:
+  item:
+    description: ItemInfo by MagaBenG
+    usage: /item
+
+   
