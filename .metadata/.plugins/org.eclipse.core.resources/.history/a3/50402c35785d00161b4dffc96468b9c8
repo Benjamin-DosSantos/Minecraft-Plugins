@@ -1,0 +1,31 @@
+package commands;
+
+import org.bukkit.Bukkit;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.PlayerInventory;
+
+import main.attributes;
+
+public class armor extends Command{
+
+	public armor(String name) {
+		super(name);
+	}// End of Item constructor
+
+	@Override
+	public boolean execute(CommandSender sender, String label, String[] args) {
+		sender.sendMessage("You ran the armor command with an argument of " + attributes.getLevel());
+
+		Player player = (Player) sender;
+
+		PlayerInventory playerInventory = player.getInventory();
+		ItemStack mainHandItem = playerInventory.getItemInMainHand();
+		
+		Bukkit.dispatchCommand(Bukkit.getServer().getConsoleSender(), "/give @p" + mainHandItem + "1 0 {AttributeModifiers:[{AttributeName:\"generic.armor\",Name:\"generic.armor\",Amount:" + attributes.getLevel() + ",Operation:0,UUIDMost:66224,UUIDLeast:392396}]}");
+		
+		return true;
+	}// End of execute Command
+}// End of class

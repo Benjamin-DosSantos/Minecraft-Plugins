@@ -1,0 +1,120 @@
+package main;
+
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
+import org.bukkit.Material;
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.HumanEntity;
+import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.inventory.InventoryClickEvent;
+import org.bukkit.inventory.Inventory;
+import org.bukkit.inventory.InventoryHolder;
+import org.bukkit.inventory.ItemStack;
+
+public class featherGUI implements Listener {
+	public Inventory inv;
+	public int guiSize = 9;
+	public String guiName = "Fast Ban";
+	
+	public String[][] items = new String[guiSize][2];
+	
+	public void openGUI(CommandSender p){
+	    inv = createNewInv(null, guiSize, guiName);
+	    populateGUI();
+	    addItemsToGUI();
+	    ((HumanEntity) p).openInventory(inv);
+	}// end of openGUI
+	
+	public void populateGUI(){
+		items[0][0] = (Material.BLAZE_ROD).toString();
+		items[1][0] = (Material.ICE).toString();
+		items[2][0] = (Material.WEB).toString();
+		items[3][0] = (Material.DIAMOND_SWORD).toString();
+		items[4][0] = (Material.BEDROCK).toString();
+		items[5][0] = (Material.OBSIDIAN).toString();
+		items[6][0] = (Material.EMERALD_BLOCK).toString();
+		items[7][0] = (Material.ARROW).toString();
+		items[8][0] = (Material.PAPER).toString();
+	}// End of populateGUI method
+	
+	public void nameItems(){
+		items[0][1] = "Set on Fire";
+		items[1][1] = "Freeze";
+		items[2][1] = "Kill";
+		items[3][1] = "Ban";
+		items[4][1] = "Temp-Ban";
+		items[5][1] = "Mute";
+		items[6][1] = "Temp-Mute";
+		items[7][1] = "Extra";
+		items[8][1] = "Extra";
+	}
+	
+	public void addItemsToGUI(){
+		for(int i = 0; i < items.length; i++){
+			inv.setItem(i, new ItemStack(Material.matchMaterial(items[i][0])));
+			inv.getItem(i).getItemMeta().setDisplayName(items[i][1]);
+		}// End of for the size of the array
+	}// End of addItemsToGUI Method
+	
+	public Inventory createNewInv(InventoryHolder inventoryOwner, int size, String inventoryName){
+		return Bukkit.createInventory(inventoryOwner, size, inventoryName);
+	};
+	
+	@EventHandler //MAKE SURE YOU HAVE THIS
+	public void InventoryClick(InventoryClickEvent e){
+	    Player player = (Player) e.getWhoClicked();  
+	    
+	    if(items[0] == null){
+	    	populateGUI();
+	    	nameItems();
+	    }
+	    
+	    if(e.getInventory().getTitle().contains(guiName)){
+	        //Cancel the event so they can't take items out of the GUI
+	    	Material clickedItem = e.getCurrentItem().getType();
+	    	e.setCancelled(true);
+	        for(int i = 0; i < items.length; i++){
+	        	if(items[i][0].equalsIgnoreCase(clickedItem.toString()) && items[i][1].equalsIgnoreCase(clickedItem.name().toString())){
+	        		runAction(i, player);
+	        	}// end of if the item is the same type
+	        }// end of for the items in items
+	    }// End of if in the GUI
+	}// End of InventoryClick method
+
+	private void runAction(int selection, Player player) {
+		switch (selection){
+			case 0:
+				player.sendMessage("You Clicked on slot 0");
+				break;
+			case 1:
+				player.sendMessage("You Clicked on slot 1");
+				break;
+			case 2:
+				player.sendMessage("You Clicked on slot 2");
+				break;
+			case 3:
+				player.sendMessage("You Clicked on slot 3");
+				break;
+			case 4:
+				player.sendMessage("You Clicked on slot 4");
+				break;
+			case 5:
+				player.sendMessage("You Clicked on slot 5");
+				break;
+			case 6:
+				player.sendMessage("You Clicked on slot 6");
+				break;
+			case 7:
+				player.sendMessage("You Clicked on slot 7");
+				break;
+			case 8:
+				player.sendMessage("You Clicked on slot 8");
+				break;
+			default:
+				player.sendMessage(ChatColor.RED + "Something has gone wrong, please try again");
+		}// End of switch for action
+		player.closeInventory();
+	}// End of runAction method
+}// End of class

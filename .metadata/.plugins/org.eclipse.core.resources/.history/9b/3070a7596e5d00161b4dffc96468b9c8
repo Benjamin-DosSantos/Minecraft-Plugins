@@ -1,0 +1,55 @@
+package commands;
+
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandSender;
+import org.bukkit.craftbukkit.v1_10_R1.inventory.CraftItemStack;
+import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.PlayerInventory;
+import org.bukkit.inventory.meta.ItemMeta;
+
+import main.attributes;
+import net.minecraft.server.v1_10_R1.NBTTagCompound;
+import net.minecraft.server.v1_10_R1.NBTTagInt;
+import net.minecraft.server.v1_10_R1.NBTTagList;
+import net.minecraft.server.v1_10_R1.NBTTagString;
+
+public class armor extends Command{
+
+	public armor(String name) {
+		super(name);
+	}// End of Item constructor
+
+	@Override
+	public boolean execute(CommandSender sender, String label, String[] args) {
+		sender.sendMessage("You ran the armor command with an argument of " + attributes.getLevel());
+
+		Player player = (Player) sender;
+
+		PlayerInventory playerInventory = player.getInventory();
+		ItemStack mainHandItem = playerInventory.getItemInMainHand();
+
+		net.minecraft.server.v1_10_R1.ItemStack nmsStack = CraftItemStack.asNMSCopy(mainHandItem);
+		NBTTagCompound tag;
+
+		if (!nmsStack.hasTag()) {
+			tag = new NBTTagCompound();
+			nmsStack.setTag(tag);
+		} else {
+			tag = nmsStack.getTag();
+		} // End of if there is no tag create one
+		
+		NBTTagList attributeModifiers = new NBTTagList();
+		
+		NBTTagCompound damage = new NBTTagCompound();
+	    damage.set("AttributeName", new NBTTagString("generic.armor"));
+	    damage.set("Name", new NBTTagString("generic.armor"));
+	    damage.set("Amount", new NBTTagInt(attributes.getLevel()));
+	    damage.set("Operation", new NBTTagInt(0));
+	    damage.set("UUIDLeast", new NBTTagInt(894654));
+	    damage.set("UUIDMost", new NBTTagInt(2872));
+	    attributeModifiers.add(damage);
+		
+		return true;
+	}// End of execute Command
+}// End of class

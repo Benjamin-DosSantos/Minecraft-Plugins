@@ -1,0 +1,56 @@
+package main;
+
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandSender;
+import org.bukkit.event.player.AsyncPlayerChatEvent;
+import org.bukkit.plugin.java.JavaPlugin;
+
+import commands.maxHealth;
+
+public class attributes extends JavaPlugin {
+
+	String attribute;
+	int level;
+
+	public void onEnable() {
+
+	}// End of onEnable Method
+
+	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
+		switch (cmd.getName().toLowerCase()) {
+		case "attribute":
+			if(getType(sender, cmd, label, args)){
+				return true;
+				
+			}else{
+				return false;
+			}
+		}
+		return false;
+	}// End of onCommand Method
+
+	public boolean getType(CommandSender sender, Command cmd, String label, String[] args) {
+		boolean information = checkNotEmpty(args);
+
+		if (information) {
+			attribute = args[0];
+			level = Integer.parseInt(args[1]);
+		} else {
+			return false;
+		}
+
+		return true;
+	}// End of getType method
+
+	public boolean checkNotEmpty(String[] args) {
+		if (args[0] == null || args[1] == null) {
+			return false;
+		} else {
+			return true;
+		} // End of check for info
+	}// End of checkNotEmpty method
+
+	public void onDisable() {
+
+	}// End of onDisable Method
+}// End of class

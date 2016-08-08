@@ -1,7 +1,0 @@
-package Utilities;
-
-import org.bukkit.plugin.java.JavaPlugin;
-
-public class Utilities extends JavaPlugin{
-
-}

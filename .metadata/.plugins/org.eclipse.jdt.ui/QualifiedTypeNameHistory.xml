@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="MainCommands.CommandHandler"/>
-<fullyQualifiedTypeName name="org.bukkit.command.Command"/>
 <fullyQualifiedTypeName name="MainCommands.Hello"/>
-<fullyQualifiedTypeName name="org.bukkit.entity.Player"/>
-<fullyQualifiedTypeName name="org.bukkit.Bukkit"/>
 <fullyQualifiedTypeName name="net.minecraft.server.v1_10_R1.Packet"/>
 <fullyQualifiedTypeName name="org.bukkit.craftbukkit.v1_10_R1.entity.CraftPlayer"/>
 <fullyQualifiedTypeName name="net.minecraft.server.v1_10_R1.PacketPlayOutChat"/>
 <fullyQualifiedTypeName name="net.minecraft.server.v1_10_R1.IChatBaseComponent.ChatSerializer"/>
 <fullyQualifiedTypeName name="mkremins.fanciful.TextualComponent"/>
 <fullyQualifiedTypeName name="java.awt.List"/>
-<fullyQualifiedTypeName name="java.util.Arrays"/>
 <fullyQualifiedTypeName name="com.google.gson.stream.JsonWriter"/>
 <fullyQualifiedTypeName name="com.google.gson.JsonElement"/>
 <fullyQualifiedTypeName name="com.avaje.ebean.text.json.JsonWriter"/>
@@ -20,9 +16,36 @@
 <fullyQualifiedTypeName name="it.unimi.dsi.fastutil.Arrays"/>
 <fullyQualifiedTypeName name="org.bukkit.enchantments.Enchantment"/>
 <fullyQualifiedTypeName name="java.util.Map.Entry"/>
-<fullyQualifiedTypeName name="org.bukkit.inventory.meta.ItemMeta"/>
 <fullyQualifiedTypeName name="org.bukkit.event.player.AsyncPlayerChatEvent"/>
 <fullyQualifiedTypeName name="net.minecraft.server.v1_10_R1.NBTTagList"/>
 <fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="net.minecraft.server.v1_10_R1.PacketPlayOutBoss.Action"/>
+<fullyQualifiedTypeName name="org.bukkit.event.player.PlayerInteractEvent"/>
+<fullyQualifiedTypeName name="org.bukkit.entity.Player"/>
+<fullyQualifiedTypeName name="org.bukkit.event.block.Action"/>
+<fullyQualifiedTypeName name="org.bukkit.inventory.InventoryHolder"/>
+<fullyQualifiedTypeName name="org.bukkit.event.player.PlayerMoveEvent"/>
+<fullyQualifiedTypeName name="org.bukkit.command.CommandSender"/>
+<fullyQualifiedTypeName name="net.minecraft.server.v1_10_R1.Item"/>
 <fullyQualifiedTypeName name="org.bukkit.ChatColor"/>
+<fullyQualifiedTypeName name="org.bukkit.Material"/>
+<fullyQualifiedTypeName name="org.bukkit.inventory.meta.ItemMeta"/>
+<fullyQualifiedTypeName name="org.bukkit.event.EventHandler"/>
+<fullyQualifiedTypeName name="org.bukkit.entity.Entity"/>
+<fullyQualifiedTypeName name="org.bukkit.event.player.PlayerInteractEntityEvent"/>
+<fullyQualifiedTypeName name="org.bukkit.entity.Cow"/>
+<fullyQualifiedTypeName name="commands.maxHealth"/>
+<fullyQualifiedTypeName name="java.util.jar.Attributes"/>
+<fullyQualifiedTypeName name="org.bukkit.craftbukkit.v1_10_R1.inventory.CraftItemStack"/>
+<fullyQualifiedTypeName name="net.minecraft.server.v1_10_R1.NBTTagCompound"/>
+<fullyQualifiedTypeName name="org.bukkit.inventory.PlayerInventory"/>
+<fullyQualifiedTypeName name="org.bukkit.inventory.ItemStack"/>
+<fullyQualifiedTypeName name="main.attributes"/>
+<fullyQualifiedTypeName name="org.bukkit.command.Command"/>
+<fullyQualifiedTypeName name="net.minecraft.server.v1_10_R1.PlayerInventory"/>
+<fullyQualifiedTypeName name="com.avaje.ebean.enhance.asm.commons.Method"/>
+<fullyQualifiedTypeName name="net.minecraft.server.v1_10_R1.ItemStack"/>
+<fullyQualifiedTypeName name="java.lang.reflect.Method"/>
+<fullyQualifiedTypeName name="java.util.Arrays"/>
+<fullyQualifiedTypeName name="org.bukkit.Bukkit"/>
 </qualifiedTypeNameHistroy>

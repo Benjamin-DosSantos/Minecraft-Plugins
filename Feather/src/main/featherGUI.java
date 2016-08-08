@@ -1,73 +1,138 @@
 package main;
 
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Entity;
 import org.bukkit.entity.HumanEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 
-import net.minecraft.server.v1_10_R1.Item;
-
-public class featherGUI {
+public class featherGUI implements Listener {
 	public Inventory inv;
 	public int guiSize = 9;
 	public String guiName = "Fast Ban";
+
+	public String[][] items = new String[guiSize][2];
 	
-	Material[] items = new Material[guiSize];
-	
-	public void openGUI(CommandSender p){
-	    //format: null, size of inventory (must be divisible by 9), "GUI name"
-	    inv = createNewInv(null, 9, guiName);
-	    populateGUI();
-	    ((HumanEntity) p).openInventory(inv);
-	}// end of openGUI
-	
-	public void populateGUI(){
-		items[0] = Material.PAPER;
-		items[1] = Material.DIAMOND;
-		items[2] = Material.DIAMOND;
-		items[3] = Material.DIAMOND;
-		items[4] = Material.DIAMOND;
-		items[5] = Material.DIAMOND;
-		items[6] = Material.DIAMOND;
-		items[7] = Material.DIAMOND;
-		items[8] = Material.PAPER;
-		
+	Entity playerHit;
+
+	public void openGUI(CommandSender p) {
+		inv = createNewInv(null, guiSize, guiName);
+		populateGUI();
+		nameItems();
 		addItemsToGUI();
+		((HumanEntity) p).openInventory(inv);
+	}// end of openGUI
+
+	public void populateGUI() {
+		items[0][0] = (Material.BLAZE_ROD).toString();
+		items[1][0] = (Material.ICE).toString();
+		items[2][0] = (Material.WEB).toString();
+		items[3][0] = (Material.DIAMOND_SWORD).toString();
+		items[4][0] = (Material.BEDROCK).toString();
+		items[5][0] = (Material.OBSIDIAN).toString();
+		items[6][0] = (Material.EMERALD_BLOCK).toString();
+		items[7][0] = (Material.ARROW).toString();
+		items[8][0] = (Material.PAPER).toString();
 	}// End of populateGUI method
-	
-	public void addItemsToGUI(){
-		for(int i = 0; i < items.length; i++){
-			inv.setItem(i, new ItemStack(items[i]));
-		}// End of for the size of the array
+
+	public void nameItems() {
+		items[0][1] = "Set on Fire";
+		items[1][1] = "Freeze";
+		items[2][1] = "Kill";
+		items[3][1] = "Ban";
+		items[4][1] = "Temp-Ban";
+		items[5][1] = "Mute";
+		items[6][1] = "Temp-Mute";
+		items[7][1] = "Extra";
+		items[8][1] = "Exit";
+	}
+
+	public void addItemsToGUI() {
+		for (int i = 0; i < items.length; i++) {
+			ItemStack item = new ItemStack(Material.matchMaterial(items[i][0]));
+
+			ItemMeta im = item.getItemMeta();
+			im.setDisplayName(items[i][1]);
+			item.setItemMeta(im);
+
+			inv.setItem(i, item);
+		} // End of for the size of the array
 	}// End of addItemsToGUI Method
-	
-	public Inventory createNewInv(InventoryHolder inventoryOwner, int size, String inventoryName){
+
+	public Inventory createNewInv(InventoryHolder inventoryOwner, int size, String inventoryName) {
 		return Bukkit.createInventory(inventoryOwner, size, inventoryName);
 	};
-	
-	@EventHandler //MAKE SURE YOU HAVE THIS
-	public void InventoryClick(InventoryClickEvent e){
-	    Player p = (Player) e.getWhoClicked();  
 
-	    if(e.getInventory().getTitle().contains(guiName)){
-	        //Cancel the event so they can't take items out of the GUI
-	        e.setCancelled(true);
-	       
-	        Material clickedItem = e.getCurrentItem().getType();
-	        
-	        switch (clickedItem){
-	        	case items[0]:
-	        		break;
-	        	case items[1]:
-	        		break;
-	        }
-	    }
-	}
+	@EventHandler // MAKE SURE YOU HAVE THIS
+	public void InventoryClick(InventoryClickEvent e) {
+		Player player = (Player) e.getWhoClicked();
+
+		if (items[0][0] == null) {
+			populateGUI();
+			nameItems();
+		}
+
+		if (e.getInventory().getTitle().contains(guiName)) {
+			// Cancel the event so they can't take items out of the GUI
+			Material clickedItem = e.getCurrentItem().getType();
+			e.setCancelled(true);
+			for (int i = 0; i < items.length; i++) {
+				if (items[i][0].equalsIgnoreCase(clickedItem.toString())) {
+					runAction(i, player);
+				} // end of if the item is the same type
+			} // end of for the items in items
+		} // End of if in the GUI
+	}// End of InventoryClick method
+
+	private void runAction(int selection, Player player) {
+		switch (selection) {
+		case 0:
+			player.sendMessage("You Clicked on slot 0");
+			break;
+		case 1:
+			player.sendMessage("You Clicked on slot 1");
+			break;
+		case 2:
+			player.sendMessage("You Clicked on slot 2");
+			break;
+		case 3:
+			player.sendMessage("You Clicked on slot 3");
+			break;
+		case 4:
+			player.sendMessage("You Clicked on slot 4");
+			break;
+		case 5:
+			player.sendMessage("You Clicked on slot 5");
+			break;
+		case 6:
+			player.sendMessage("You Clicked on slot 6");
+			break;
+		case 7:
+			player.sendMessage("You Clicked on slot 7");
+			break;
+		case 8:
+			player.sendMessage("You Clicked on slot 8");
+			break;
+		default:
+			player.sendMessage(ChatColor.RED + "Something has gone wrong, please try again");
+		}// End of switch for action
+		player.closeInventory();
+	}// End of runAction method
 	
+	public Entity getPlayerHit() {
+		return playerHit;
+	}
+
+	public void setPlayerHit(Entity entity) {
+		this.playerHit = entity;
+	}
 }// End of class

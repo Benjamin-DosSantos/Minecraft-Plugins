@@ -1,0 +1,110 @@
+package main;
+
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
+import org.bukkit.Material;
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.HumanEntity;
+import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.inventory.InventoryClickEvent;
+import org.bukkit.inventory.Inventory;
+import org.bukkit.inventory.InventoryHolder;
+import org.bukkit.inventory.ItemStack;
+
+public class featherGUI implements Listener {
+	public Inventory inv;
+	public int guiSize = 9;
+	public String guiName = "Fast Ban";
+	
+	public  String[] items = new String[guiSize];
+	
+	CommandSender person;
+	
+	public void openGUI(CommandSender p){
+		person = p;
+	    inv = createNewInv(null, guiSize, guiName);
+	    printList(p);
+	    populateGUI();
+	    ((HumanEntity) p).openInventory(inv);
+	}// end of openGUI
+	
+	public void populateGUI(){
+		items[0] = (Material.PAPER).toString();
+		items[1] = (Material.DIAMOND).toString();
+		items[2] = (Material.DIAMOND).toString();
+		items[3] = (Material.DIAMOND).toString();
+		items[4] = (Material.DIAMOND).toString();
+		items[5] = (Material.DIAMOND).toString();
+		items[6] = (Material.DIAMOND).toString();
+		items[7] = (Material.DIAMOND).toString();
+		items[8] = (Material.PAPER).toString();
+		
+		addItemsToGUI();
+	}// End of populateGUI method
+	
+	public void addItemsToGUI(){
+		for(int i = 0; i < items.length; i++){
+			inv.setItem(i, new ItemStack(Material.matchMaterial(items[i])));
+		}// End of for the size of the array
+	}// End of addItemsToGUI Method
+	
+	public Inventory createNewInv(InventoryHolder inventoryOwner, int size, String inventoryName){
+		return Bukkit.createInventory(inventoryOwner, size, inventoryName);
+	};
+	
+	@EventHandler //MAKE SURE YOU HAVE THIS
+	public void InventoryClick(InventoryClickEvent e){
+	    Player player = (Player) e.getWhoClicked();  
+
+	    if(e.getInventory().getTitle().contains(guiName)){
+	        //Cancel the event so they can't take items out of the GUI
+	    	Material clickedItem = e.getCurrentItem().getType();
+	    	e.setCancelled(true);
+	       
+	    	player.sendMessage("You Clicked a " + clickedItem.toString());
+	    	player.sendMessage("We are checking against " + items[4]);
+	        for(int i = 0; i < items.length; i++){
+	        	if(items[i].equalsIgnoreCase(clickedItem.toString())){
+	        		runAction(i, player);
+	        	}// end of if the item is the same type
+	        }// end of for the items in items
+	    }// End of if in the GUI
+	}// End of InventoryClick method
+
+	private void runAction(int selection, Player player) {
+		switch (selection){
+			case 0:
+				player.sendMessage("You Clicked on slot 0");
+				break;
+			case 1:
+				player.sendMessage("You Clicked on slot 1");
+				break;
+			case 2:
+				player.sendMessage("You Clicked on slot 2");
+				break;
+			case 3:
+				player.sendMessage("You Clicked on slot 3");
+				break;
+			case 4:
+				player.sendMessage("You Clicked on slot 4");
+				break;
+			case 5:
+				player.sendMessage("You Clicked on slot 5");
+				break;
+			case 6:
+				player.sendMessage("You Clicked on slot 6");
+				break;
+			case 7:
+				player.sendMessage("You Clicked on slot 7");
+				break;
+			case 8:
+				player.sendMessage("You Clicked on slot 8");
+				break;
+			default:
+				player.sendMessage(ChatColor.RED + "Something has gone wrong, please try again");
+		}// End of switch for action
+		player.closeInventory();
+	}// End of runAction method
+}// End of class

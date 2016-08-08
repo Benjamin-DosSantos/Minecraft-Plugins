@@ -1,0 +1,28 @@
+package commands;
+
+import java.util.List;
+import java.util.Map;
+
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandSender;
+import org.bukkit.enchantments.Enchantment;
+import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.PlayerInventory;
+import org.bukkit.inventory.meta.ItemMeta;
+
+import fanciful.FancyMessage;
+
+public class Item extends Command{
+
+	public Item(String name) {
+		super(name);
+	}
+
+	@Override
+	public boolean execute(CommandSender sender, String label, String[] args) {
+		return true;
+	}
+}// End of class

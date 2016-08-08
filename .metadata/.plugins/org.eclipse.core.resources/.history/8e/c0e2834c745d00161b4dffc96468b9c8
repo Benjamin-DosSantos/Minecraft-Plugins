@@ -1,0 +1,46 @@
+package commands;
+
+import java.util.Arrays;
+
+import org.bukkit.ChatColor;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandSender;
+import org.bukkit.craftbukkit.v1_10_R1.inventory.CraftItemStack;
+import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.PlayerInventory;
+import org.bukkit.inventory.meta.ItemMeta;
+
+import main.attributes;
+import net.minecraft.server.v1_10_R1.NBTTagByte;
+import net.minecraft.server.v1_10_R1.NBTTagCompound;
+import net.minecraft.server.v1_10_R1.NBTTagInt;
+import net.minecraft.server.v1_10_R1.NBTTagList;
+import net.minecraft.server.v1_10_R1.NBTTagString;
+
+public class armor extends Command{
+
+	public armor(String name) {
+		super(name);
+	}// End of Item constructor
+
+	@Override
+	public boolean execute(CommandSender sender, String label, String[] args) {
+		sender.sendMessage("You ran the armor command with an argument of " + attributes.getLevel());
+
+		Player player = (Player) sender;
+
+		PlayerInventory playerInventory = player.getInventory();
+		ItemStack mainHandItem = playerInventory.getItemInMainHand();
+		ItemMeta mainItemMeta = mainHandItem.getItemMeta();
+		
+		mainItemMeta.setDisplayName("Cool Sword");
+		mainItemMeta.setLore(Arrays.asList("This is a cool sword."));
+		mainHandItem.setItemMeta(mainItemMeta);
+		
+		net.minecraft.server.v1_10_R1.ItemStack nmsStack = CraftItemStack.asNMSCopy(mainHandItem);
+		
+		
+		return true;
+	}// End of execute Command
+}// End of class

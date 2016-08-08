@@ -1,0 +1,30 @@
+package commands;
+
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.PlayerInventory;
+import org.bukkit.inventory.meta.ItemMeta;
+
+import main.attributes;
+
+public class maxHealth extends Command{
+
+	public maxHealth(String name) {
+		super(name);
+	}// End of Item constructor
+
+	@Override
+	public boolean execute(CommandSender sender, String label, String[] args) {
+		sender.sendMessage("You ran the MaxHealth command with an argument of " + attributes.getLevel());
+		
+		Player player = (Player)sender;
+		
+		PlayerInventory playerInventory = player.getInventory();
+		ItemStack mainHandItem = playerInventory.getItemInMainHand();
+		ItemMeta mainItemMeta = mainHandItem.getItemMeta();
+		
+		return true;
+	}// End of execute Command
+}// End of class
