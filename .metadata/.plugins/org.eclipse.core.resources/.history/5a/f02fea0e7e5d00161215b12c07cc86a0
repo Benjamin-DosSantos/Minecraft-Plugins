@@ -1,0 +1,10 @@
+name: Attributes_New_1
+version: 1.0.0
+main: main.attributes
+commands:
+  attribute:
+    description: 
+    usage: /attribute
+    aliases: [maxHealth, knobackResistance, movementSpeed, attackDamage, armor, armorToughness, attackDamage, attackSpeed, luck, unbreakable, hideModifiers]
+
+   

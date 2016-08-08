@@ -1,0 +1,119 @@
+[11:36:04] [Server thread/INFO]: Starting minecraft server version 1.10.2
+[11:36:04] [Server thread/INFO]: Loading properties
+[11:36:04] [Server thread/INFO]: Default game type: SURVIVAL
+[11:36:04] [Server thread/INFO]: Generating keypair
+[11:36:04] [Server thread/INFO]: Starting Minecraft server on *:25565
+[11:36:04] [Server thread/INFO]: Using default channel type
+[11:36:05] [Server thread/INFO]: This server is running CraftBukkit version git-Bukkit-67b2424 (MC: 1.10.2) (Implementing API version 1.10.2-R0.1-SNAPSHOT)
+[11:36:05] [Server thread/WARN]: Failed to load user banlist: 
+java.io.FileNotFoundException: banned-players.json (No such file or directory)
+	at java.io.FileInputStream.open0(Native Method) ~[?:1.8.0_60]
+	at java.io.FileInputStream.open(FileInputStream.java:195) ~[?:1.8.0_60]
+	at java.io.FileInputStream.<init>(FileInputStream.java:138) ~[?:1.8.0_60]
+	at com.google.common.io.Files.newReader(Files.java:86) ~[craftbukkit.jar:git-Bukkit-67b2424]
+	at net.minecraft.server.v1_10_R1.JsonList.load(JsonList.java:171) ~[craftbukkit.jar:git-Bukkit-67b2424]
+	at net.minecraft.server.v1_10_R1.DedicatedPlayerList.z(SourceFile:99) [craftbukkit.jar:git-Bukkit-67b2424]
+	at net.minecraft.server.v1_10_R1.DedicatedPlayerList.<init>(SourceFile:25) [craftbukkit.jar:git-Bukkit-67b2424]
+	at net.minecraft.server.v1_10_R1.DedicatedServer.init(DedicatedServer.java:183) [craftbukkit.jar:git-Bukkit-67b2424]
+	at net.minecraft.server.v1_10_R1.MinecraftServer.run(MinecraftServer.java:518) [craftbukkit.jar:git-Bukkit-67b2424]
+	at java.lang.Thread.run(Thread.java:745) [?:1.8.0_60]
+[11:36:05] [Server thread/WARN]: Failed to load ip banlist: 
+java.io.FileNotFoundException: banned-ips.json (No such file or directory)
+	at java.io.FileInputStream.open0(Native Method) ~[?:1.8.0_60]
+	at java.io.FileInputStream.open(FileInputStream.java:195) ~[?:1.8.0_60]
+	at java.io.FileInputStream.<init>(FileInputStream.java:138) ~[?:1.8.0_60]
+	at com.google.common.io.Files.newReader(Files.java:86) ~[craftbukkit.jar:git-Bukkit-67b2424]
+	at net.minecraft.server.v1_10_R1.JsonList.load(JsonList.java:171) ~[craftbukkit.jar:git-Bukkit-67b2424]
+	at net.minecraft.server.v1_10_R1.DedicatedPlayerList.y(SourceFile:91) [craftbukkit.jar:git-Bukkit-67b2424]
+	at net.minecraft.server.v1_10_R1.DedicatedPlayerList.<init>(SourceFile:27) [craftbukkit.jar:git-Bukkit-67b2424]
+	at net.minecraft.server.v1_10_R1.DedicatedServer.init(DedicatedServer.java:183) [craftbukkit.jar:git-Bukkit-67b2424]
+	at net.minecraft.server.v1_10_R1.MinecraftServer.run(MinecraftServer.java:518) [craftbukkit.jar:git-Bukkit-67b2424]
+	at java.lang.Thread.run(Thread.java:745) [?:1.8.0_60]
+[11:36:05] [Server thread/WARN]: Failed to load operators list: 
+java.io.FileNotFoundException: ops.json (No such file or directory)
+	at java.io.FileInputStream.open0(Native Method) ~[?:1.8.0_60]
+	at java.io.FileInputStream.open(FileInputStream.java:195) ~[?:1.8.0_60]
+	at java.io.FileInputStream.<init>(FileInputStream.java:138) ~[?:1.8.0_60]
+	at com.google.common.io.Files.newReader(Files.java:86) ~[craftbukkit.jar:git-Bukkit-67b2424]
+	at net.minecraft.server.v1_10_R1.JsonList.load(JsonList.java:171) ~[craftbukkit.jar:git-Bukkit-67b2424]
+	at net.minecraft.server.v1_10_R1.DedicatedPlayerList.A(SourceFile:107) [craftbukkit.jar:git-Bukkit-67b2424]
+	at net.minecraft.server.v1_10_R1.DedicatedPlayerList.<init>(SourceFile:29) [craftbukkit.jar:git-Bukkit-67b2424]
+	at net.minecraft.server.v1_10_R1.DedicatedServer.init(DedicatedServer.java:183) [craftbukkit.jar:git-Bukkit-67b2424]
+	at net.minecraft.server.v1_10_R1.MinecraftServer.run(MinecraftServer.java:518) [craftbukkit.jar:git-Bukkit-67b2424]
+	at java.lang.Thread.run(Thread.java:745) [?:1.8.0_60]
+[11:36:05] [Server thread/WARN]: Failed to load white-list: 
+java.io.FileNotFoundException: whitelist.json (No such file or directory)
+	at java.io.FileInputStream.open0(Native Method) ~[?:1.8.0_60]
+	at java.io.FileInputStream.open(FileInputStream.java:195) ~[?:1.8.0_60]
+	at java.io.FileInputStream.<init>(FileInputStream.java:138) ~[?:1.8.0_60]
+	at com.google.common.io.Files.newReader(Files.java:86) ~[craftbukkit.jar:git-Bukkit-67b2424]
+	at net.minecraft.server.v1_10_R1.JsonList.load(JsonList.java:171) ~[craftbukkit.jar:git-Bukkit-67b2424]
+	at net.minecraft.server.v1_10_R1.DedicatedPlayerList.C(SourceFile:123) [craftbukkit.jar:git-Bukkit-67b2424]
+	at net.minecraft.server.v1_10_R1.DedicatedPlayerList.<init>(SourceFile:30) [craftbukkit.jar:git-Bukkit-67b2424]
+	at net.minecraft.server.v1_10_R1.DedicatedServer.init(DedicatedServer.java:183) [craftbukkit.jar:git-Bukkit-67b2424]
+	at net.minecraft.server.v1_10_R1.MinecraftServer.run(MinecraftServer.java:518) [craftbukkit.jar:git-Bukkit-67b2424]
+	at java.lang.Thread.run(Thread.java:745) [?:1.8.0_60]
+[11:36:05] [Server thread/INFO]: Preparing level "world"
+[11:36:06] [Server thread/INFO]: Preparing start region for level 0 (Seed: -8948579883063672371)
+[11:36:08] [Server thread/INFO]: Preparing spawn area: 4%
+[11:36:09] [Server thread/INFO]: Preparing spawn area: 7%
+[11:36:10] [Server thread/INFO]: Preparing spawn area: 11%
+[11:36:11] [Server thread/INFO]: Preparing spawn area: 15%
+[11:36:12] [Server thread/INFO]: Preparing spawn area: 21%
+[11:36:13] [Server thread/INFO]: Preparing spawn area: 25%
+[11:36:14] [Server thread/INFO]: Preparing spawn area: 30%
+[11:36:15] [Server thread/INFO]: Preparing spawn area: 36%
+[11:36:16] [Server thread/INFO]: Preparing spawn area: 40%
+[11:36:17] [Server thread/INFO]: Preparing spawn area: 46%
+[11:36:18] [Server thread/INFO]: Preparing spawn area: 49%
+[11:36:19] [Server thread/INFO]: Preparing spawn area: 55%
+[11:36:20] [Server thread/INFO]: Preparing spawn area: 62%
+[11:36:21] [Server thread/INFO]: Preparing spawn area: 69%
+[11:36:22] [Server thread/INFO]: Preparing spawn area: 76%
+[11:36:23] [Server thread/INFO]: Preparing spawn area: 80%
+[11:36:24] [Server thread/INFO]: Preparing spawn area: 86%
+[11:36:25] [Server thread/INFO]: Preparing spawn area: 93%
+[11:36:26] [Server thread/INFO]: Preparing start region for level 1 (Seed: -8948579883063672371)
+[11:36:28] [Server thread/INFO]: Preparing spawn area: 6%
+[11:36:29] [Server thread/INFO]: Preparing spawn area: 11%
+[11:36:30] [Server thread/INFO]: Preparing spawn area: 19%
+[11:36:31] [Server thread/INFO]: Preparing spawn area: 30%
+[11:36:32] [Server thread/INFO]: Preparing spawn area: 43%
+[11:36:33] [Server thread/INFO]: Preparing spawn area: 52%
+[11:36:34] [Server thread/INFO]: Preparing spawn area: 61%
+[11:36:35] [Server thread/INFO]: Preparing spawn area: 73%
+[11:36:36] [Server thread/INFO]: Preparing spawn area: 82%
+[11:36:37] [Server thread/INFO]: Preparing spawn area: 87%
+[11:36:38] [Server thread/INFO]: Preparing start region for level 2 (Seed: -8948579883063672371)
+[11:36:39] [Server thread/INFO]: Preparing spawn area: 38%
+[11:36:40] [Server thread/INFO]: Preparing spawn area: 64%
+[11:36:41] [Server thread/INFO]: Preparing spawn area: 99%
+[11:36:41] [Server thread/INFO]: Done (36.339s)! For help, type "help" or "?"
+[11:36:43] [Server thread/INFO]: CONSOLE: [0;31;1mPlease note that this command is not supported and may cause issues when using some plugins.[m
+[11:36:43] [Server thread/INFO]: CONSOLE: [0;31;1mIf you encounter any issues please use the /stop command to restart your server.[m
+[11:36:44] [Server thread/INFO]: [Attributes] Loading Attributes v1.0.0
+[11:36:44] [Server thread/INFO]: [Attributes] Enabling Attributes v1.0.0
+[11:36:44] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[11:36:44] [Server thread/INFO]: CONSOLE: [0;32;1mReload complete.[m
+[11:36:45] [Server thread/WARN]: Can't keep up! Did the system time change, or is the server overloaded? Running 3259ms behind, skipping 65 tick(s)
+[11:37:00] [User Authenticator #1/INFO]: UUID of player MagaBenG is 4e13d7d7-75d5-4f10-8a9c-be4893b1462f
+[11:37:00] [Server thread/INFO]: MagaBenG[/127.0.0.1:51444] logged in with entity id 2258 at ([world]100.5, 72.0, 256.5)
+[11:37:02] [Server thread/INFO]: Opped magabeng
+[11:37:07] [Server thread/INFO]: MagaBenG issued server command: /reload
+[11:37:07] [Server thread/INFO]: MagaBenG: [0;31;1mPlease note that this command is not supported and may cause issues when using some plugins.[m
+[11:37:07] [Server thread/INFO]: MagaBenG: [0;31;1mIf you encounter any issues please use the /stop command to restart your server.[m
+[11:37:07] [Server thread/INFO]: [Attributes] Disabling Attributes v1.0.0
+[11:37:08] [Server thread/INFO]: [Attributes] Loading Attributes v1.0.0
+[11:37:08] [Server thread/INFO]: [Attributes] Enabling Attributes v1.0.0
+[11:37:08] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[11:37:08] [Server thread/INFO]: MagaBenG: [0;32;1mReload complete.[m
+[11:37:09] [Server thread/INFO]: MagaBenG issued server command: /pl
+[11:37:21] [Server thread/INFO]: MagaBenG issued server command: /attribute armor 20
+[11:37:21] [Server thread/INFO]: That player cannot be found
+[11:37:29] [Server thread/INFO]: MagaBenG has just earned the achievement [Taking Inventory]
+[11:37:34] [Server thread/INFO]: MagaBenG issued server command: /gamemode 1
+[11:37:34] [Server thread/INFO]: [MagaBenG: Set own game mode to Creative Mode]
+[11:37:38] [Server thread/INFO]: MagaBenG issued server command: /gamemode 1
+[11:37:38] [Server thread/INFO]: [MagaBenG: Set own game mode to Creative Mode]
+[11:37:40] [Server thread/INFO]: MagaBenG issued server command: /attribute armor 20
+[11:37:40] [Server thread/INFO]: That player cannot be found

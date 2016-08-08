@@ -24,7 +24,9 @@ public class armor extends Command{
 		PlayerInventory playerInventory = player.getInventory();
 		ItemStack mainHandItem = playerInventory.getItemInMainHand();
 		
-		Bukkit.dispatchCommand(Bukkit.getServer().getConsoleSender(), "give " + player + " " + mainHandItem + " 1 0 {AttributeModifiers:[{AttributeName:\"generic.armor\",Name:\"generic.armor\",Amount:" + attributes.getLevel() + ",Operation:0,UUIDMost:66224,UUIDLeast:392396}]}");
+		Bukkit.dispatchCommand(Bukkit.getServer().getConsoleSender(), "give " + player.getName() + " " + mainHandItem + " 1 0 {AttributeModifiers:[{AttributeName:\"generic.armor\",Name:\"generic.armor\",Amount:" + attributes.getLevel() + ",Operation:0,UUIDMost:66224,UUIDLeast:392396}]}");
+		
+		sender.sendMessage(player.getName());
 		
 		return true;
 	}// End of execute Command
